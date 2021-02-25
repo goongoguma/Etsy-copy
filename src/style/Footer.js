@@ -102,15 +102,6 @@ export const FooterSNS = styled.ul`
       &:after {
         content: '';
         position: absolute;
-        z-index: -9;
-        right: 0;
-        opacity: 0.3;
-        display: none;
-        transition-property: width;
-        transition-duration: 1s;
-        transition-delay: 1s;
-        width: 0;
-        height: 0;
       }
       &:hover:after {
         animation: 150ms myAnimation forwards;
