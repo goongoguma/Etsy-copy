@@ -1,5 +1,5 @@
 import React from 'react';
-import { WhatBotLeftSVG, Clearfix } from '../../../style/Body';
+import { WhatBotLeftSVG, WhatBotRightSVG } from '../../../style/Body';
 
 function BottomSVG() {
   return (
@@ -58,7 +58,7 @@ function BottomSVG() {
         </span>
       </div>
 
-      <span style={{ position: 'absolute', bottom: '0', right: '0'}}>
+      <WhatBotRightSVG>
         <svg 
           xmlns='http://www.w3.org/2000/svg' 
           xmlnsXlink='http://www.w3.org/1999/xlink' 
@@ -80,7 +80,7 @@ function BottomSVG() {
             style={{transformOrigin: '140px 140px'}} />
           </g>
         </svg>
-      </span>
+      </WhatBotRightSVG>
     </>
   )
 }

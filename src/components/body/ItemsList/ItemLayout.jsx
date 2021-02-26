@@ -2,6 +2,7 @@ import React from 'react';
 import { 
   ItemImageLayout, 
   ItemPrice, 
+  ItemImageLayoutSecondLine,
   FreeShipping, 
   Bestseller,
   DiscountPrice,
@@ -26,7 +27,7 @@ function ItemLayout({ data }) {
           </div>
         }
       </div>
-      <div style={{ padding: '0 20px' }}>
+      <ItemImageLayoutSecondLine>
         <div style={{ marginBottom: '30px' }}>
           <img src={data[1].image} style={{width: '100%', height: '100%'}} />
           <ItemPrice>{`USD ${data[1].price}`}</ItemPrice>
@@ -49,7 +50,7 @@ function ItemLayout({ data }) {
             <DiscountRate>{`(${data[2].discount} off)`}</DiscountRate>
           </>}
         </div>
-      </div>
+      </ItemImageLayoutSecondLine>
     </ItemImageLayout>
    )
 }

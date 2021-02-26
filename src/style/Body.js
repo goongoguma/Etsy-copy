@@ -41,6 +41,10 @@ export const FindListWrapper = styled.ul`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  padding: 0;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const FindListLi = styled.li`
@@ -64,6 +68,10 @@ export const FindImage = styled.div`
   height: 160px;
   border-radius: 50%;
   cursor: pointer;
+  @media (max-width: 768px) {
+    width: 106px;
+    height: 106px;
+  }
 `;
 
 export const ImageText = styled.p`
@@ -81,6 +89,9 @@ export const ItemWrapper = styled.div`
     font-size: 28px;
     font-weight: 500;
   }
+  @media (max-width: 768px) {
+    margin: 12px 12px 18px;
+  }
 `;
 
 export const ItemText = styled.ul`
@@ -95,6 +106,9 @@ export const ItemTextList = styled.div`
   padding-bottom: 10px;
   position: relative;
   display: inline-block;
+  @media (max-width: 768px) {
+    display: none;
+  }
   &::after {
     content: '';
     bottom: 0;
@@ -138,6 +152,9 @@ export const ItemTextListSelected = styled.div`
     background: #181818;
     width: 100%;
   }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 export const ItemImageList = styled.div`
@@ -163,7 +180,21 @@ export const ItemImageLayout = styled.div`
   display: flex;
   justify-content: space-around;
   text-align: left;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `;
+
+export const ItemImageLayoutSecondLine = styled.div`
+  padding: 0 20px;
+  @media (max-width: 768px) {
+    padding: 0 10px;
+  }
+`
+
+export const ItemImageWrapper = styled.div`
+  padding: 0 10px;
+`
 
 export const ItemPrice = styled.p`
   margin: 10px 0 5px 0;
@@ -205,6 +236,22 @@ export const DiscountRate = styled.span`
   font-size: 14px;
 `;
 
+export const VisitShop = styled.span`
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+    font-size: 13px;
+    font-weight: 300;
+    margin: 20px 0;
+
+    & i {
+      font-size: 10px;
+      font-wegith: 100;
+      margin-left: 5px;
+    }
+  }
+`
+
 // Selections
 export const SelectionsWrapper = styled.div`
   padding: 18px 0px;
@@ -212,16 +259,17 @@ export const SelectionsWrapper = styled.div`
 `
 
 export const SelectionsTitle = styled.div`
-  
   & h2 {
     font-size: 16px;
     display: inline-block;
-
   }
   & p {
     font-size: 13px;
     display: inline-block;
     margin: 0 20px;
+  }
+  @media (max-width: 768px) {
+    text-align: center;
   }
 `;
 
@@ -229,6 +277,10 @@ export const SelectionsItemWrapper = styled.ul`
   display: flex;
   justify-content: space-between;
   padding: 0;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    padding: 0 15px;
+  }
 `;
 
 export const SelectionsItem = styled.li`
@@ -240,11 +292,34 @@ export const SelectionsItem = styled.li`
   &:hover {
     box-shadow: 0 0 20px rgba(33,33,33,.2);
   }
+  @media (max-width: 768px) {
+    margin-bottom: 15px;
+  }
   & p {
-    padding: 0 0 20px 10px;
-    font-weight: 500;
+      padding: 0 0 20px 10px;
+      font-weight: 500;
+      width: 190px;
+      @media (max-width: 768px) {
+        width: 150px;
+        padding: 0;
+        font-size: 13px;
+        font-weight: 700;
+        padding-left: 10px;
+    }
   }
 `;
+
+export const SelectionItemImage = styled.div`
+  width: 204px;
+  height: 162px;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+
+  @media (max-width: 768px) {
+    width: 160px;
+    height: 127px;
+  }
+`
 
 // What
 export const WholeWhatWrapper = styled.div`
@@ -267,6 +342,9 @@ export const WhatTitle = styled.div`
     line-height: 48px;
     font-weight: 300;
     margin: 20px 0;
+    @media (max-width: 768px) {
+      font-size: 32px;
+    }
   }
   & span {
     font-size: 15px;
@@ -277,14 +355,9 @@ export const WhatTitle = styled.div`
 
 export const WhatText = styled.div`
   padding: 36px 18px 0;
-  & h4 {
-    font-size: 32px;
-    font-weight: 300;
-    margin: 0 0 6px 0;
-  }
-  & span {
-    font-weight: 300;
-    line-height: 28px;
+
+  @media (max-width: 768px) {
+    padding: 36px 0 0;
   }
 `;
 
@@ -292,6 +365,28 @@ export const WhatTextSection = styled.section`
   display: inline-block;
   width: 33.33%;
   vertical-align: top;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    display: block;
+    padding: 20px 0;
+  }
+
+  & h4 {
+    font-size: 32px;
+    font-weight: 300;
+    margin: 0 0 6px 0;
+    @media (max-width: 768px) {
+      font-size: 24px;
+      font-weight: 300;
+    }
+  }
+
+    & span {
+      font-weight: 300;
+      line-height: 28px;
+    }
+  }
 `
 
 export const WhatQuestion = styled.div`
@@ -317,13 +412,22 @@ export const WhatTopSvg = styled.span`
   position: absolute;
   right: -50px;
   top: -85px;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const WhatBotLeftSVG = styled.span`
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
-export const Clearfix = styled.div`
-  width: 400px;
-  height: 203px;
-`
-
+export const WhatBotRightSVG = styled.span`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;

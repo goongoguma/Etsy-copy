@@ -13,12 +13,61 @@ export const Container = styled.div`
 `;
 
 // subscribe
+export const SubscribeMobileWrapper = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+    background: #D7E6F5;
+    padding: 20px;
+    margin: 0 20px 40px 20px;
+    border-radius: 7px;
+    & h4 {
+      margin: 0;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    & div {
+      padding: 15px 0;
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 30px;
+      box-shadow: 1px 2px 4px 0 rgb(34 34 34 / 10%) inset;
+    }
+    & input {
+      margin-left: 15px;
+      flex: 60%;
+      border: none;
+      font-size: 16px;
+      &:focus {
+        outline: none;
+      }
+    }
+    & button {
+      border: none;
+      background: #fff;
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+      font-size: 16px;
+      font-weight: 700;
+      flex: 40%;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+`;
 export const WholeSubscribeWrapper = styled.div`
   background-color: #D7E6F5;
   width: 100vw;
   position: relative;
   left: calc(-50vw + 50%);
   padding: 30px 0;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const SubscribeWrapper = styled.div`
@@ -74,17 +123,64 @@ export const FooterMenuWrapper = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    padding: 15px 30px 0 30px;
+    flex-wrap: wrap;
+  }
 `;
 
 export const FooterSection = styled.section`
   & h5 {
     font-size: 16px;
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  & .fa-chevron-down {
+    display: none;
   }
   & p {
     font-size: 13px;
     cursor: pointer;
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    & .fa-chevron-down {
+      display: block;
+    }
+    & .slider {
+      overflow-y: hidden;
+      // animation: 150ms toggleMenu forwards;
+      // transition-property: all;
+      // transition-duration: .5s;
+      // transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    }
+    & .closed {
+      max-height: 0;
+    }
   }
 `;
+
+export const DownloadAppSection = styled.div`
+  display: block;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`
+
+export const DownloadAppSectionMobile = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+`
 
 export const FooterSNS = styled.ul`
   list-style: none;
@@ -164,22 +260,63 @@ export const IncWrapper = styled.div`
   padding: 18px 24px;
   color: #fff;
   display: flex;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const IncCountryInfo = styled.ul`
+  display: flex;
+  padding: 0;
+  list-style: none;
+  flex: 1;
+  display: flex;
+  font-size: 13px;
+  padding: 0
   & li {
     margin-right: 11px;
     font-weight: 700;
+    padding: 0 10px;
   }
-  ${IncUl}
+  @media (max-width: 768px) {
+    justify-content: space-evenly;
+  }
 `;
 
+export const IncCountiryInfoCenter = styled.li`
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  padding: 0 10px;
+  @media (max-width: 768px) {
+   padding: 0 20px;
+  }
+`
+
 export const IncAgreementInfo = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   & li {
-    margin-left: 25px;
     text-decoration: underline;
     cursor: pointer;
   }
+  & .info-first {
+    text-decoration: none;
+    @media (max-width: 768px) {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 12px;
+      margin-right: 0;
+    }
+  }
+  & .info-third {
+    margin: 0 35px;
+  }
+  & div {
+    display: none;
+    @media (max-width: 768px) {
+      display: block;
+     }
+  }
   ${IncUl}
-`
+`;

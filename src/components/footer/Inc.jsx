@@ -1,18 +1,19 @@
 import React from 'react';
-import { IncWrapper, IncCountryInfo, IncAgreementInfo } from '../../style/Footer';
+import { IncWrapper, IncCountryInfo, IncAgreementInfo, IncCountiryInfoCenter } from '../../style/Footer';
 
 function Inc() {
   return (
     <IncWrapper>
       <IncCountryInfo>
-        <li><i className="fas fa-globe-americas" style={{ marginRight: '9px', fontSize: '16px'}} /> South Korea</li>
-        <li style={{borderLeft: '1px solid #fff', borderRight: '1px solid #fff', padding: '0 10px'}}>English (US)</li>
-        <li>$ (USD)</li>
+        <li style={{paddingRight: '10px'}}><i className="fas fa-globe-americas" style={{ marginRight: '9px', fontSize: '16px'}} /> South Korea</li>
+        <IncCountiryInfoCenter>English (US)</IncCountiryInfoCenter>
+        <li style={{padding: '0 10px'}}>$ (USD)</li>
       </IncCountryInfo>
       <IncAgreementInfo>
-        <li>© 2021 Etsy, Inc.</li>
+        <li className='info-first'>© 2021 Etsy, Inc.</li>
+        <div style={{flexBasis: '100%', height: '0'}}></div>
         <li>Terms of Use</li>
-        <li>Privacy</li>
+        <li className='info-third'>Privacy</li>
         <li>Interest-based ads</li>
       </IncAgreementInfo>
     </IncWrapper>

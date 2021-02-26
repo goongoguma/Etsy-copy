@@ -4,6 +4,7 @@ import {
   ItemText, 
   ItemTextList,
   ItemTextListSelected,
+  VisitShop
 } from '../../style/Body';
 import HomeImprovement from './ItemsList/HomeImprovement';
 import PersonalizedGifts from './ItemsList/PersonalizedGifts';
@@ -56,6 +57,9 @@ function Items() {
       })}
       </ItemText>
       {handleItemListComponent()}
+      <VisitShop>
+        Visit shop <i className="fas fa-chevron-right"></i>
+      </VisitShop>
     </ItemWrapper>
   )
 };

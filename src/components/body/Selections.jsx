@@ -4,7 +4,8 @@ import {
   SelectionsWrapper, 
   SelectionsTitle, 
   SelectionsItemWrapper,
-  SelectionsItem 
+  SelectionsItem,
+  SelectionItemImage 
 } from '../../style/Body';
 
 function Selections() {
@@ -18,13 +19,11 @@ function Selections() {
         {
           selections.map(selection => (
             <SelectionsItem key={selection.title}>
-              <div style={{
+              <SelectionItemImage style={{
                 background: `url(${selection.image})`, 
-                height: '162px', width: '204px', 
                 backgroundRepeat: 'no-repeat', 
                 backgroundSize: 'contain',
-                borderTopRightRadius: '12px',
-                borderTopLeftRadius: '12px'}} 
+              }} 
               />
               <p>{selection.title}</p>
             </SelectionsItem>
