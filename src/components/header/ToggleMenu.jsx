@@ -7,13 +7,22 @@ import {
   ModalCloseBtn,
   ModalBodyWrapper 
 } from '../../style/Header';
-const menu = ['Jewelry & Accessories', 'Clothing & Shoes', 'Home & Living', 'Wedding & Party', 'Toys & Entertainment', 'Art & Collectibles', 'Craft Supplies & Tools'];
+const menu = [
+  'Jewelry & Accessories', 
+  'Clothing & Shoes', 
+  'Home & Living', 
+  'Wedding & Party', 
+  'Toys & Entertainment', 
+  'Art & Collectibles', 
+  'Craft Supplies & Tools'
+];
 
 function ToggleMenu({ open, onClose }) {
   if(!open) return null;
 
   return ReactDom.createPortal(
-    <Overlay onClick={onClose}>
+    <>
+      <Overlay onClick={onClose} />
       <ModalStyleOpen>
         <ModalTitleWrapper>
           <h3>Browse Categories <ModalCloseBtn onClick={onClose} /></h3>
@@ -26,7 +35,7 @@ function ToggleMenu({ open, onClose }) {
           }
         </ModalBodyWrapper>
       </ModalStyleOpen>
-    </Overlay>, 
+    </>, 
     document.getElementById('toggleMenu')
   )
 };

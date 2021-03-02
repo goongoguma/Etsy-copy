@@ -25,7 +25,7 @@ function MenuMobile() {
 
   const navToggle = () => {
     setOpen(!open);
-  }
+  };
 
   return (
     <>
