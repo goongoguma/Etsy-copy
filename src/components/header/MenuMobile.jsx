@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ToggleMenu from '../../components/header/ToggleMenu';
 import { 
   MenuMobileWrapper, 
@@ -11,19 +11,27 @@ import {
 function MenuMobile() {
   const [open, setOpen] = useState(false);
 
-  const onOpen = () => {
-    setOpen(true)
-  };
-
   const onClose = () => {
     setOpen(false)
   };
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.cssText = `overflow: hidden;`
+    } else {
+      document.body.style.cssText = `overflow: visible;`
+    }
+  }, [open]);
+
+  const navToggle = () => {
+    setOpen(!open);
+  }
 
   return (
     <>
       <ToggleMenu open={open} onClose={onClose} />
       <MenuMobileWrapper>
-        <NavIcon onClick={() => setOpen(!open)} />
+        <NavIcon onClick={navToggle} />
         <InputWrapper>
           <HeaderInput type='text' placeholder='Search for anything' />
           <SearchButton>

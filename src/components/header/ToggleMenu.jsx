@@ -2,21 +2,19 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { 
   Overlay, 
-  ModalStyle,
+  ModalStyleOpen,
   ModalTitleWrapper,
   ModalCloseBtn,
   ModalBodyWrapper 
 } from '../../style/Header';
+const menu = ['Jewelry & Accessories', 'Clothing & Shoes', 'Home & Living', 'Wedding & Party', 'Toys & Entertainment', 'Art & Collectibles', 'Craft Supplies & Tools'];
 
 function ToggleMenu({ open, onClose }) {
   if(!open) return null;
 
-  const menu = ['Jewelry & Accessories', 'Clothing & Shoes', 'Home & Living', 'Wedding & Party', 'Toys & Entertainment', 'Art & Collectibles', 'Craft Supplies & Tools'];
-
   return ReactDom.createPortal(
-    <>
-      <Overlay onClick={onClose} />
-      <ModalStyle>
+    <Overlay onClick={onClose}>
+      <ModalStyleOpen>
         <ModalTitleWrapper>
           <h3>Browse Categories <ModalCloseBtn onClick={onClose} /></h3>
         </ModalTitleWrapper>
@@ -27,8 +25,8 @@ function ToggleMenu({ open, onClose }) {
             ))
           }
         </ModalBodyWrapper>
-      </ModalStyle>
-    </>,
+      </ModalStyleOpen>
+    </Overlay>, 
     document.getElementById('toggleMenu')
   )
 };

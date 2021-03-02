@@ -168,16 +168,33 @@ export const Overlay = styled.div`
   z-index: 1000;
 `;
 
-export const ModalStyle = styled.div`
+export const ModalStyleOpen = styled.div`
   position: fixed;
-  top: 64%;
   left: 50%;
-  height: 100%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   z-index: 1000;
   width: 100%;
   padding: 10px;
+  
+  animation: 400ms menuToggleOn forwards;
+  @keyframes menuToggleOn {
+    0% {
+      bottom: -50%;
+      color: transparent;
+      height: 0;
+    }
+    70% {
+      bottom: -60%;
+      color: #181818;
+      height: 100%
+    }
+    100% {
+      bottom: -66%;
+      color: #181818;
+      height: 100%
+    }
+  }
 `;
 
 export const ModalTitleWrapper = styled.div`
