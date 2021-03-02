@@ -155,10 +155,10 @@ export const FooterSection = styled.section`
     }
     & .slider {
       overflow-y: hidden;
-      // animation: 150ms toggleMenu forwards;
-      // transition-property: all;
-      // transition-duration: .5s;
-      // transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+      max-height: 150px;
+      transition-property: all;
+      transition-duration: .5s;
+      transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
     }
     & .closed {
       max-height: 0;

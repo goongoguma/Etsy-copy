@@ -20,6 +20,13 @@ export const FindTitle = styled.h2`
   font-weight: 300;
   font-size: 32px;
   letter-spacing: .5;
+  @media (max-width: 768px) {
+   font-size: 24px;
+   font-weight: 300;
+   letter-spacing: .5px;
+   line-height: 28px;
+   padding: 24px 12px 6px 12px;
+  }
 `;
 
 export const FindDesc = styled.p`
