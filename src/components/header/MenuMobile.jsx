@@ -17,9 +17,9 @@ function MenuMobile() {
 
   useEffect(() => {
     if (open) {
-      document.body.style.cssText = `overflow: hidden;`
+      document.body.style.cssText = 'overflow: hidden;'
     } else {
-      document.body.style.cssText = `overflow: visible;`
+      document.body.style.cssText = 'overflow: visible;'
     }
   }, [open]);
 
