@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+// HeaderBorder
+export const HeaderBorder = styled.div`
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+  border: 1px solid rgba(34, 34, 34, 0.15);
+`;
+
 // HeaderIndex 
 export const Container = styled.div`
   display: block;
@@ -204,6 +212,7 @@ export const ModalTitleWrapper = styled.div`
     text-align: center;
     font-size: 18px;
     font-weight: 500;
+    
     & i {
       position: absolute;
       right: 0;

@@ -10,7 +10,6 @@ export const WholeWidthWrapper = styled.div`
   width: 100vw;
   position: relative;
   left: calc(-50vw + 50%);
-  border-top: 2px solid rgba(34, 34, 34, 0.15);
 `;
 
 // Find 

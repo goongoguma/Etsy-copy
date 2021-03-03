@@ -8,6 +8,7 @@ import {
   FindImage,
   ImageText,
 } from '../../style/Body';
+import { Link } from 'react-router-dom';
 
 function Find() {
   const textOrder = ['Face masks', 'Wall decor', 'Gift Ideas', 'Outdoor & garden', 'Self-care', 'Craft kits'];
@@ -26,10 +27,12 @@ function Find() {
       <FindListWrapper>
         {
           textOrder.map((menu, index) => (
-            <FindListLi key={index}>
-               <FindImage style={{background: `url(${backgroundOrder[index]})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}} />
-               <ImageText>{menu}<i className="fas fa-arrow-right" /></ImageText>
-            </FindListLi>
+            <Link to='filter' key={menu} style={{ textDecoration: 'none', color: '#181818' }}>
+              <FindListLi key={index}>
+                <FindImage style={{background: `url(${backgroundOrder[index]})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}} />
+                <ImageText>{menu}<i className="fas fa-arrow-right" /></ImageText>
+              </FindListLi>
+            </Link>
           ))
         }
       </FindListWrapper>

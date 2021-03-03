@@ -7,7 +7,7 @@ import {
   Bestseller,
   DiscountPrice,
   DiscountRate,
-} from '../../../style/Body'
+} from '../../../style/Body';
 
 function ItemLayout({ data }) {
   return (
