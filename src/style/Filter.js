@@ -33,6 +33,9 @@ export const FilterInfoWrapper = styled.div`
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
+  @media (max-width: 425px) {
+    padding: 12px 0px;
+  }
 `;
 
 export const FilterInfoIcon = styled.div`
