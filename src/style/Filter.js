@@ -178,6 +178,7 @@ export const ShopBtnMobile = styled.p`
   @media (max-width: 425px) {
     display: block;
     font-weight: 500;
+    cursor: pointer;
   }
 `
 
@@ -244,6 +245,11 @@ export const FilterBodyItemList = styled.li`
   & .review-count {
     font-size: 12px;
     color: #595959;
+  }
+
+  @media (max-width: 768px) {
+    flex-basis: calc(33.33% - 12px);
+    max-width: calc(33.33% - 12px);
   }
 
   @media (max-width: 425px) {
