@@ -205,6 +205,9 @@ export const ItemImageWrapper = styled.div`
 export const ItemPrice = styled.p`
   margin: 10px 0 5px 0;
   font-weight: 500;
+  @media (max-width: 425px) {
+    margin-bottom: 20px !important;
+  }
 `;
 
 export const Bestseller = styled.div`

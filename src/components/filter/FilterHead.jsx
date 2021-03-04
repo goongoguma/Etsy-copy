@@ -6,6 +6,7 @@ import {
   FilterSVG, 
   LikeBtn,
   ShopBtn,
+  ShopBtnMobile,
   FilterInfoText,
   FilterFirstItemWrapper,
   FilterFirstItemImageWrapper,
@@ -15,7 +16,7 @@ import {
 } from '../../style/Filter';
 import { ItemPrice, DiscountPrice, DiscountRate } from '../../style/Body'; 
 
-const fullStar = () => {
+export const fullStar = () => {
   return (
     <div>
       <i className="fas fa-star" />
@@ -27,14 +28,16 @@ const fullStar = () => {
   )
 };
 
-const fourAndAhalfStar = () => {
-  <div>
-    <i className="fas fa-star" />
-    <i className="fas fa-star" />
-    <i className="fas fa-star" />
-    <i className="fas fa-star" />
-    <i className="fas fa-star-half-alt" />
-  </div>
+export const fourAndAhalfStar = () => {
+  return (
+    <div>
+      <i className="fas fa-star" />
+      <i className="fas fa-star" />
+      <i className="fas fa-star" />
+      <i className="fas fa-star" />
+      <i className="fas fa-star-half-alt" />
+    </div>
+  )
 };
 
 function FilterHead() {
@@ -59,17 +62,19 @@ function FilterHead() {
       <FilterFirstItemWrapper>
           <FilterFirstItemImageWrapper>
             <LikeBtn>
-              <i className="far fa-heart"></i>
+              <i className="far fa-heart" />
             </LikeBtn>
-            <FilterFirstItemImage style={{ background: `url(${filterList[0].image})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', padding: '40%' }} />
+            <FilterFirstItemImage style={{ background: `url(${filterList[0].image})`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain' }} />
           </FilterFirstItemImageWrapper>
         <FilterFirstItemDescWrapper>
+          <h3>{filterList[0].title}</h3>
           <FilterFirstItemReviewWrapper>
             <span className='company-name'>Company Name</span>
             <span className='review'>{fullStar()}</span>
             <span>{`(${filterList[0].review})`}</span>
           </FilterFirstItemReviewWrapper>
-          <h3>{filterList[0].title}</h3>
+          <span className='company-name'>{filterList[0].title}</span>
+
           <ItemPrice style={{ marginBottom: '50px'}}>{`USD ${filterList[0].price}`}</ItemPrice>
           {filterList[0].discount > 0 && 
             <>
@@ -77,6 +82,7 @@ function FilterHead() {
               <DiscountRate>{`(${filterList[0].discount} off)`}</DiscountRate>
             </>}
           <ShopBtn>Shop this item</ShopBtn>
+          <ShopBtnMobile>Shop this item<i class="fas fa-arrow-right" style={{marginLeft: '10px', cursor: 'pointer'}} /></ShopBtnMobile>
         </FilterFirstItemDescWrapper>
       </FilterFirstItemWrapper>
     </div>
