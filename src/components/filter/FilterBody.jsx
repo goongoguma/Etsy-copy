@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   LikeBtn,
   FilterBodyFilter, 
@@ -9,12 +9,28 @@ import {
 import { filterList } from '../../data/data';
 import { fullStar, fourAndAhalfStar } from '../../components/filter/FilterHead';
 import { ItemPrice, DiscountPrice, DiscountRate, FreeShipping, Bestseller } from '../../style/Body';
+import FilterModal  from './FilterModal';
 
 function FilterBody() {
+  const [isOpenFilter, setIsOpenFilter] = useState(false);
+
+  useEffect(() => {
+    if (isOpenFilter) {
+      document.body.style.cssText = 'overflow: hidden;'
+    } else {
+      document.body.style.cssText = 'overflow: visible;'
+    }
+  }, [isOpenFilter]);
+
+  const filterToggle = () => {
+    setIsOpenFilter(!isOpenFilter);
+  };
+
   return (
     <div style={{marginTop: '6px', marginBottom: '12px'}}>
+      <FilterModal open={isOpenFilter} isClose={() => setIsOpenFilter(false)} />
       <FilterBodyFilter>
-        <FilterBodyFilterBtn>
+        <FilterBodyFilterBtn onClick={filterToggle}>
           <i className="fas fa-list-ul" style={{marginRight: '5px'}} />
           All Filters
         </FilterBodyFilterBtn>

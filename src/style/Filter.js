@@ -16,7 +16,7 @@ const btnAnimation = css`
 const btnHoverTransform = css`
   transform: scale(1.03);
   box-shadow: 0 4px 20px rgb(34 34 34 / 15%)
-`
+`;
 
 // FilterHead
 export const FilterContainer = styled.div`
@@ -258,5 +258,218 @@ export const FilterBodyItemList = styled.li`
   @media (max-width: 425px) {
     flex-basis: calc(50% - 12px);
     max-width: calc(50% - 12px);
+  }
+`;
+
+// FilterModal
+export const FilterOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .7);
+  z-index: 1000;
+`;
+
+export const FilterModalStyleOpen = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translate(2px, -50%);
+  background-color: #fff;
+  z-index: 1000;
+  padding: 30px;
+  width: 420px;
+  height: 100%;
+  min-width: 375px;
+  max-width: 480px;
+  animation: 300ms filterToggleOn forwards;
+  @keyframes filterToggleOn {
+    0% {
+      left: -50%;
+      color: transparent;
+      width: 0;
+    }
+    100% {
+      left: 0;
+    }
+  }
+
+  .fa-times {
+    position: fixed;
+    right: -35px;
+    top: 55px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+  }
+  }
+`;
+
+export const FilterModalTitleWrapper = styled.h3`
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 300;
+  padding-left: 24px;
+`;
+
+export const FilterModalBodyWrapper = styled.div`
+  padding: 0 0 0 24px;
+  & p {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+    margin: 0;
+  }
+  & span {
+    font-size: 13px;
+  }
+  & .wrapper {
+    position: relative;
+    margin: 5px 0;
+  }
+  & input[type='checkbox'] {
+    width: 15px;
+    height: 15px;
+    min-width: 15px;
+    border-radius: 3px;
+    vertical-align: middle;
+    opacity: 0;
+    margin-right: 10px;
+  } 
+  & input[type='checkbox']:checked ~ .checkbox-label:before {
+    background: #222222;
+  }
+  & input[type='checkbox']:checked ~ .checkbox-label:after {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .checkbox-label {
+    &:before {
+      content: '';
+      height: 15px;
+      width: 15px;
+      min-width: 15px;
+      border-radius: 3px;
+      border: 2px solid rgba(34, 34, 34, .3);
+      transition: all 200ms ease-out;
+      position: absolute;
+      left: 0;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      height: 12px;
+      width: 12px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 24 24%22%3E%3Cpath fill%3D%22%23FFFFFF%22 d%3D%22M9.17,21.71L0.86,13.4a2,2,0,1,1,2.76-2.76L9,16,20.28,2.93a2,2,0,1,1,2.95,2.56Z%22 %2F%3E%3C%2Fsvg%3E");
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: all 200ms ease-out;
+    }
+  }
+  & input[type='radio'] {
+    height: 18px;
+    width: 18px;
+    min-width: 18px;
+    vertical-align: middle;
+    opacity: 0;
+    border-radius: 100px;
+    margin-right: 5px;
+  }
+  & input[type='radio']:checked ~ .radio-label:before {
+    background: #222222;
+  }
+  & input[type='radio']:checked ~ .radio-label:after {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .radio-label {
+    &:before {
+      content: '';
+      width: 15px;
+      height: 15px;
+      min-width: 15px;
+      border-radius: 100px;
+      border: 2px solid rgba(32, 32, 32, .3);
+      margin-right: 6px;
+      transition: all 200ms ease-out;
+      position: absolute;
+      left: 0px;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      border-radius: 100px;
+      left: 5.4px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      background: #fff;
+      transition: all 200ms ease-out;
+    }
+  }
+  .price-input {
+    font-size: 13px;
+    height: 36px;
+    line-height: 18px;
+    background: #fff;
+    box-shadow: 0 1px 4px 0 rgb(34 34 34 / 10%) inset;
+    border: 1px solid rgba(34, 34, 34, 0.15);
+    border-radius: 6px;
+    color: #222222;
+    padding-left: 12px;
+    width: 86px;
+    margin-top: 5px;
+  }
+
+}
+  & .category {
+    margin-bottom: 20px;
+    & .category-input {
+        cursor: pointer;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 5px;
+        & .fa-chevron-right {
+          color: #757575;
+        }
+        &:hover {
+          background-color: whitesmoke; 
+        }
+        & .all-categories {
+          font-weight: 500;
+          font-size: 14px;
+          font-weight: 700;
+        }
+      }
+    }
+    & .offers {
+      margin-bottom: 20px;
+      & p {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: 0.1px;
+      }
+    }
+    & .ship {
+      margin-bottom: 20px;
+    }
+    & .price {
+      margin-bottom: 20px;
+
+    & .closure {
+      margin-bottom: 20px;
+    }
+    & .size {
+      margin-bottom: 20px;
+    }
   }
 `;

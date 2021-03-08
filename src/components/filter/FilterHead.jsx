@@ -82,7 +82,7 @@ function FilterHead() {
               <DiscountRate>{`(${filterList[0].discount} off)`}</DiscountRate>
             </>}
           <ShopBtn>Shop this item</ShopBtn>
-          <ShopBtnMobile>Shop this item<i class="fas fa-arrow-right" style={{marginLeft: '10px', cursor: 'pointer'}} /></ShopBtnMobile>
+          <ShopBtnMobile>Shop this item<i className="fas fa-arrow-right" style={{marginLeft: '10px', cursor: 'pointer'}} /></ShopBtnMobile>
         </FilterFirstItemDescWrapper>
       </FilterFirstItemWrapper>
     </div>
