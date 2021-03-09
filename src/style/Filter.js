@@ -343,6 +343,9 @@ export const FilterModalBodyWrapper = styled.div`
   padding: 0 0 0 24px;
   overflow-y: scroll;
   height: 900px;
+  & section {
+    padding-right: 25px;
+  }
   & p {
     font-size: 13px;
     font-weight: 500;

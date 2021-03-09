@@ -11,8 +11,6 @@ function FilterModal({ open, isClose}) {
   const [ radioVal, setRadioVal ] = useState('')
   if (!open) return null;
 
-  console.log(radioVal)
-
   return ReactDom.createPortal(
     <>
       <FilterOverlay onClick={isClose} />
