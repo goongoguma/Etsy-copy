@@ -279,7 +279,7 @@ export const FilterModalStyleOpen = styled.div`
   transform: translate(2px, -50%);
   background-color: #fff;
   z-index: 1000;
-  padding: 30px;
+  padding: 30px 0 30px 30px;
   width: 420px;
   height: 100%;
   min-width: 375px;
@@ -303,25 +303,57 @@ export const FilterModalStyleOpen = styled.div`
     font-size: 30px;
     color: #fff;
     cursor: pointer;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
+}
+@media (max-width: 768px) {
+  padding: 0;
+  width: 100%;
+}
+& .button-wrapper {
+  position: fixed;
+  top: 90%;
+  padding: 10px;
+  border-top: 1px solid #DEDEDE;
+  width: 95.5%;
+  left: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  & button {
+    width: 45%;
+    border-radius: 30px;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: 700;
   }
+}
 `;
 
 export const FilterModalTitleWrapper = styled.h3`
   font-size: 32px;
   line-height: 36px;
   font-weight: 300;
-  padding-left: 24px;
 `;
 
 export const FilterModalBodyWrapper = styled.div`
   padding: 0 0 0 24px;
+  overflow-y: scroll;
+  height: 900px;
   & p {
     font-size: 13px;
     font-weight: 500;
     line-height: 18px;
     letter-spacing: 0.1px;
     margin: 0;
+    @media (max-width: 768px) {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 21.6px;
+    }
   }
   & span {
     font-size: 13px;
@@ -346,6 +378,10 @@ export const FilterModalBodyWrapper = styled.div`
     opacity: 1;
     transform: scale(1);
   }
+  @media (max-width: 768px) {
+    height: 785px;
+    padding: 0 30px;
+  }
   .checkbox-label {
     &:before {
       content: '';
@@ -357,6 +393,11 @@ export const FilterModalBodyWrapper = styled.div`
       transition: all 200ms ease-out;
       position: absolute;
       left: 0;
+      @media (max-width: 768px) {
+        height: 18px;
+        width: 18px;
+        min-width: 18px;
+      }
     }
     &:after {
       content: '';
@@ -369,6 +410,13 @@ export const FilterModalBodyWrapper = styled.div`
       background-size: cover;
       background-repeat: no-repeat;
       transition: all 200ms ease-out;
+      @media (max-width: 768px) {
+        top: 3px;
+        left: 3px;
+        height: 18px;
+        width: 18px;
+        min-width: 18px;
+      }
     }
   }
   & input[type='radio'] {
@@ -430,6 +478,9 @@ export const FilterModalBodyWrapper = styled.div`
 }
   & .category {
     margin-bottom: 20px;
+    & .filter-by-category {
+      margin-bottom: 10px;
+    }
     & .category-input {
         cursor: pointer;
         border: 1px solid rgba(0, 0, 0, 0.15);

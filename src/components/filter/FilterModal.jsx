@@ -18,10 +18,10 @@ function FilterModal({ open, isClose}) {
       <FilterOverlay onClick={isClose} />
       <FilterModalStyleOpen>
         <i className='fas fa-times' onClick={isClose} />
-        <FilterModalTitleWrapper>Filters</FilterModalTitleWrapper>
         <FilterModalBodyWrapper>
+          <FilterModalTitleWrapper>Filters</FilterModalTitleWrapper>
           <section className='category'>
-            <p style={{marginBottom: '10px'}}>Filter by category</p>
+            <p className='filter-by-category'>Filter by category</p>
             <div className='category-input'>
               <div className='all-categories'>All categories</div>
               <i className='fas fa-chevron-right'></i>
@@ -169,13 +169,12 @@ function FilterModal({ open, isClose}) {
             </div>
           </div>
         </FilterModalBodyWrapper>
-      </FilterModalStyleOpen>
-      <div>
+        <div></div>
         <div className="button-wrapper">
-          <button>Cancel</button>
-          <button>Apply</button>
+          <button style={{border: '2px solid black', background: '#fff'}} onClick={isClose}>Cancel</button>
+          <button style={{border: '2xp solid black', background: 'black', color: '#fff'}}>Apply</button>
         </div>
-      </div>
+      </FilterModalStyleOpen>
     </>,
     document.getElementById('toggleFilter')
   )
