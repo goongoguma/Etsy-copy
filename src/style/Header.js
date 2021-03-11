@@ -39,7 +39,7 @@ export const Logo = styled.span`
   }
 `;
 
-export const HeadWapper = styled.div`
+export const HeadWrapper = styled.div`
   padding: 12px 36px;
   display: flex;
   align-items: center;
