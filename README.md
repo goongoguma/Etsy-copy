@@ -2,6 +2,6 @@
 
 npm start
 
-Etsy 퍼블리싱 카피 & styled-components 써보기
+Etsy 퍼블리싱 카피 & css animation & styled-components 
 
 https://etzycopy.netlify.app/
